@@ -6,9 +6,14 @@
     <title>Document</title>
 </head>
 <body>
-    <h2 *ngIf="edad>=18">Acceso Permitido</h2>
+    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+        <input type="text" placeholder="Nombre de usuario" formControlName="username" required>
+        <br>
+        <input type="password" formControlName="password" placeholder="Contraseña" required>
+        <br>
+        <input type="submit">
+    </form>
 
-    <!--<h3 *ngFor="let persona of personas">{{persona}}</h3>-->
-    <button (click)="IrTopBar()">Enviar nombre</button>
+    <h1>{{formulario.value.username}}</h1>
 </body>
 </html>

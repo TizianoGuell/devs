@@ -9,11 +9,16 @@ import { VerificacionLoginService } from '../services/verificacion-login.service
 })
 export class TopbarComponent {
   nuevoNombre:string;
+  nuevaContra:string;
+  data:any;
   constructor(private verificar:VerificacionLoginService){
     this.nuevoNombre="Invitado"
+    this.nuevaContra="123"
   }
   cargar(){
-    this.nuevoNombre=this.verificar.getNombre();
+    this.data=this.verificar.getData();
+    this.nuevaContra=this.data.contra;
+    this.nuevoNombre=this.data.nombre;
   }
 
 }
