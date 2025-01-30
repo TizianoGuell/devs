@@ -1,0 +1,36 @@
+<div class="dashboard-container">
+    <app-topbar></app-topbar>
+    
+    <div class="dashboard-content">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="user-profile">
+                <div class="avatar">{{ usuarioIniciales() }}</div>
+                <h3>{{ usuarioNombre() }}</h3>
+                <p>{{ usuarioEmail() }}</p>
+            </div>
+            
+            <nav>
+                <a class="nav-item" 
+                   [class.active]="seccionActiva() === 'estadisticas'"
+                   (click)="cambiarSeccion('estadisticas')">
+                    <i class="fas fa-chart-bar"></i> Estadísticas
+                </a>
+                
+                <a class="nav-item" 
+                   [class.active]="seccionActiva() === 'actividad'"
+                   (click)="cambiarSeccion('actividad')">
+                    <i class="fas fa-bell"></i> Actividad
+                </a>
+                
+                <a class="nav-item" 
+                   [class.active]="seccionActiva() === 'config'"
+                   (click)="cambiarSeccion('config')">
+                    <i class="fas fa-cog"></i> Configuración
+                </a>
+            </nav>
+        </div>
+
+        
+    </div>
+</div>

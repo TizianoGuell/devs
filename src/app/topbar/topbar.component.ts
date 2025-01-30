@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { VerificacionLoginService } from '../services/verificacion-login.service';
+
 @Component({
   selector: 'app-topbar',
   imports: [CommonModule],
@@ -8,17 +9,20 @@ import { VerificacionLoginService } from '../services/verificacion-login.service
   styleUrl: './topbar.component.css'
 })
 export class TopbarComponent {
-  nuevoNombre:string;
-  nuevaContra:string;
-  data:any;
-  constructor(private verificar:VerificacionLoginService){
-    this.nuevoNombre="Invitado"
-    this.nuevaContra="123"
-  }
-  cargar(){
-    this.data=this.verificar.getData();
-    this.nuevaContra=this.data.contra;
-    this.nuevoNombre=this.data.nombre;
+  usuarioActual: any = {
+    nombre: 'Invitado',
+    email: 'usuario@ejemplo.com'
+  };
+
+  constructor(private verificar: VerificacionLoginService) {
+    this.cargarDatos(); // Cargar automáticamente al iniciar
   }
 
+  cargarDatos() {
+    const datos = this.verificar.getUsuarioActual();
+    this.usuarioActual = {
+      nombre: datos.nombre || 'Invitado',
+      email: datos.email || 'usuario@ejemplo.com'
+    };
+  }
 }

@@ -9,13 +9,13 @@ body {
     min-height: 100vh;
 }
 
-.login-container {
+.register-container {
     width: 100%;
     max-width: 400px;
     padding: 20px;
 }
 
-.login-form {
+.register-form {
     background: white;
     padding: 40px;
     border-radius: 12px;
@@ -47,7 +47,8 @@ h2 {
 .submit-btn {
     width: 100%;
     padding: 14px;
-    background: #0066ff;
+    margin-top: 10px;
+    background: #00cc66;
     color: white;
     border: none;
     border-radius: 8px;
@@ -58,5 +59,21 @@ h2 {
 }
 
 .submit-btn:hover {
-    background: #0052cc;
+    background: #00b359;
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 25px;
+    color: #666;
+}
+
+.login-link a {
+    color: #0066ff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
 }

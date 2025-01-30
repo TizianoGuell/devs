@@ -1,48 +1,42 @@
 import { Injectable } from '@angular/core';
-import { NonNullableFormBuilder } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
 })
 export class VerificacionLoginService {
-  private nombre:string;
-  private password:string;
-  private data:any;
-  private datosPrincipales:any
+  private usuariosRegistrados: any[] = [];
+
   constructor() {
-    this.nombre=""
-    this.password=""
-    this.datosPrincipales={
-      nombre:"Tiziano",
-      contra:"12345"
+    const usuariosGuardados = localStorage.getItem('usuarios');
+    if(usuariosGuardados) {
+      this.usuariosRegistrados = JSON.parse(usuariosGuardados);
     }
   }
 
-  guardarData(name:string,pass:string){
-    this.nombre=name;
-    this.password=pass
-    this.data={
-      nombre:this.nombre,
-      contra:this.password
+  verficarData(email: string, password: string): string | true {
+    const usuario = this.usuariosRegistrados.find(u => u.email === email);
+    
+    if (!usuario) {
+      return "El correo no está registrado";
     }
+    
+    if (usuario.password !== password) {
+      return "Contraseña incorrecta";
+    }
+    
+    this.guardarData(usuario.nombre, email);
+    return true;
   }
 
-  getData(){
-    return this.data
+  guardarData(nombre: string, email: string): void {
+    localStorage.setItem('usuarioActual', JSON.stringify({
+      nombre: nombre,
+      email: email,
+      timestamp: new Date().getTime()
+    }));
   }
 
-  verficarData(username:string,contrasenia:string){
-    if(username==this.datosPrincipales.nombre){
-      if(contrasenia==this.datosPrincipales.contra){
-        return true
-      }
-      else{
-        return "Contraseña incorrecta"
-      }
-    }
-    else{
-      return "Username incorrecto"
-    }
+  getUsuarioActual(): any {
+    return JSON.parse(localStorage.getItem('usuarioActual') || '{}');
   }
-
-}
+} 

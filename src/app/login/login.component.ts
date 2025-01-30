@@ -26,7 +26,7 @@ export class LoginComponent {
     this.verificado=this.verificar.verficarData(this.formulario.value.username,this.formulario.value.password)
     if(this.verificado===true){
       this.verificar.guardarData(this.formulario.value.username,this.formulario.value.password)
-      this.router.navigate(['topbar'])
+      this.router.navigate(['dashboard'])
     }
     else{
       alert(this.verificado)

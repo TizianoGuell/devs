@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
 </head>
 <body>
-    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
-        <input type="text" placeholder="Nombre de usuario" formControlName="username" required>
-        <br>
-        <input type="password" formControlName="password" placeholder="Contraseña" required>
-        <br>
-        <input type="submit">
-    </form>
-
-    <h1>{{formulario.value.username}}</h1>
+    <div class="login-container">
+        <form class="login-form" [formGroup]="formulario" (ngSubmit)="onSubmit()">
+            <h2>Iniciar sesión</h2>
+            <input type="text" class="form-input" placeholder="Nombre de usuario" formControlName="username" required>
+            <input type="password" class="form-input" placeholder="Contraseña" formControlName="password" required>
+            <button type="submit" class="submit-btn">Continuar</button>
+        </form>
+    </div>
 </body>
 </html>

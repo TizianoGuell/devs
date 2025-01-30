@@ -1,2 +1,7 @@
-<h1>Bienvenido a APPEX, {{nuevoNombre}}, {{nuevaContra}}</h1>
-<button (click)="cargar()"> Cargar nombre</button>
+<div class="topbar-container">
+    <h1>Bienvenido a APPEX, {{usuarioActual.nombre}}!</h1>
+    <div class="user-info">
+        <p>{{usuarioActual.email}}</p>
+        <button (click)="cargarDatos()">Actualizar datos</button>
+    </div>
+</div>
