@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { VerificacionLoginService } from '../services/verificacion-login.service';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-topbar',
   imports: [CommonModule],
@@ -14,7 +14,7 @@ export class TopbarComponent {
     email: 'usuario@ejemplo.com'
   };
 
-  constructor(private verificar: VerificacionLoginService) {
+  constructor(private verificar: VerificacionLoginService, private router:Router) {
     this.cargarDatos(); // Cargar automáticamente al iniciar
   }
 
@@ -24,5 +24,9 @@ export class TopbarComponent {
       nombre: datos.nombre || 'Invitado',
       email: datos.email || 'usuario@ejemplo.com'
     };
+  }
+  logOut(){
+    this.verificar.logout()
+    this.router.navigate(['/login']);
   }
 }

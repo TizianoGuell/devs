@@ -32,11 +32,14 @@ export class VerificacionLoginService {
     localStorage.setItem('usuarioActual', JSON.stringify({
       nombre: nombre,
       email: email,
-      timestamp: new Date().getTime()
+      timestamp: new Date().getTime(),
     }));
   }
 
   getUsuarioActual(): any {
     return JSON.parse(localStorage.getItem('usuarioActual') || '{}');
+  }
+  logout(): void {
+    localStorage.removeItem('usuarioActual');
   }
 } 
