@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    margin: 0;
+}
+:root {
+    /* Colores claros */
+    --color-primario: #6366f1;
+    --color-fondo: rgba(228, 228, 228, 0.738);
+    --color-fondo-tarjetas: #ffffff;
+    --color-texto-primario: #1e293b;
+    --color-texto-secundario: #64748b;
+    --color-borde: #e2e8f0;
+    --color-fondo-input: #f8fafc;
+  }

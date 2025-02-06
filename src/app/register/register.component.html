@@ -13,6 +13,10 @@
             <input type="email" class="form-input" placeholder="Correo electrónico" formControlName="email" required>
             <input type="password" class="form-input" placeholder="Contraseña" formControlName="password" required>
             <input type="password" class="form-input" placeholder="Confirmar contraseña" formControlName="confirmPassword" required>
+            <select class="form-input" formControlName="rol">
+                <option value="0">Usuario</option>
+                <option value="1">Admin</option>
+            </select>
             <button type="submit" class="submit-btn">Registrarse</button>
             <p class="login-link">¿Ya tienes cuenta? <a href="/login">Inicia sesión</a></p>
         </form>

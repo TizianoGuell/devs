@@ -24,15 +24,16 @@ export class VerificacionLoginService {
       return "Contraseña incorrecta";
     }
     
-    this.guardarData(usuario.nombre, email);
+    this.guardarData(usuario.nombre, email,usuario.rol);
     return true;
   }
 
-  guardarData(nombre: string, email: string): void {
+  guardarData(nombre: string, email: string,rol:string): void {
     localStorage.setItem('usuarioActual', JSON.stringify({
       nombre: nombre,
       email: email,
       timestamp: new Date().getTime(),
+      rol:rol
     }));
   }
 

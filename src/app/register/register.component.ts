@@ -21,7 +21,8 @@ export class RegisterComponent {
       fullname: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
-      confirmPassword: ['', Validators.required]
+      confirmPassword: ['', Validators.required],
+      rol:["",Validators.required]
     });
   }
 
@@ -32,7 +33,8 @@ export class RegisterComponent {
         const resultado = this.verificarRegistro.registrarUsuario(
         this.formularioRegistro.value.fullname,
         this.formularioRegistro.value.email,
-        this.formularioRegistro.value.password
+        this.formularioRegistro.value.password,
+        this.formularioRegistro.value.rol
       );
 
       if (resultado === true) {

@@ -3,13 +3,16 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { VerificacionLoginService } from '../services/verificacion-login.service';
 import { TopbarComponent } from '../topbar/topbar.component';
+import { RouterOutlet,RouterLink } from '@angular/router';
 @Component({
   selector: 'app-dashboard',
   standalone: true,
   imports: [
     CommonModule,
     FormsModule,
-    TopbarComponent
+    TopbarComponent,
+    RouterOutlet,
+    RouterLink
   ],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
@@ -20,8 +23,6 @@ export class DashboardComponent implements OnInit {
   usuarioNombre = signal('Invitado');
   usuarioEmail = signal('usuario@ejemplo.com');
   usuarioIniciales = signal('??');
-  modoOscuro = signal(false);
-
   constructor(private loginService: VerificacionLoginService) {}
 
   ngOnInit() {
@@ -42,8 +43,5 @@ export class DashboardComponent implements OnInit {
     this.seccionActiva.set(seccion);
   }
 
-  toggleModo() {
-    this.modoOscuro.update(value => !value);
-    document.body.classList.toggle('modo-oscuro', this.modoOscuro());
-  }
+ 
 }

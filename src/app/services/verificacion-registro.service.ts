@@ -14,7 +14,7 @@ export class VerificacionRegistroService {
     }
   }
 
-  registrarUsuario(nombre: string, email: string, password: string): string | true {
+  registrarUsuario(nombre: string, email: string, password: string,rol:string): string | true {
     // Validar formato de email
     if (!this.validarEmail(email)) {
       return 'Formato de correo electrónico inválido';
@@ -35,7 +35,8 @@ export class VerificacionRegistroService {
       id: Date.now(),
       nombre,
       email,
-      password
+      password,
+      rol
     };
 
     this.usuariosRegistrados.push(nuevoUsuario);

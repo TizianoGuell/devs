@@ -1,0 +1,67 @@
+<div class="admin-panel">
+    <!-- Header -->
+    <header class="admin-header">
+        <h1 class="admin-title">
+            <i class="fas fa-shield-alt"></i>
+            Panel de Administración
+        </h1>
+        <div class="admin-actions">
+            <button class="admin-btn admin-btn-primary">
+                <i class="fas fa-plus"></i>
+                Nuevo Usuario
+            </button>
+        </div>
+    </header>
+
+    <!-- Tarjetas de Estadísticas -->
+    <div class="admin-stats-grid">
+        <div class="admin-stat-card">
+            <div class="admin-stat-icon">
+                <i class="fas fa-users"></i>
+            </div>
+            <div class="admin-stat-info">
+                <div class="admin-stat-value">2,548</div>
+                <div class="admin-stat-label">Usuarios Registrados</div>
+            </div>
+        </div>
+        
+        <div class="admin-stat-card">
+            <div class="admin-stat-icon">
+                <i class="fas fa-chart-line"></i>
+            </div>
+            <div class="admin-stat-info">
+                <div class="admin-stat-value">89%</div>
+                <div class="admin-stat-label">Actividad</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tabla de Administración -->
+    <div class="admin-table-container">
+        <table class="admin-table">
+            <thead>
+                <tr>
+                    <th>Usuario</th>
+                    <th>Rol</th>
+                    <th>Último Acceso</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>user&#64;example.com</td>
+                    <td><span class="admin-badge admin-badge-success">Admin</span></td>
+                    <td>2024-02-15 14:30</td>
+                    <td>
+                        <button class="admin-btn admin-btn-icon">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <button class="admin-btn admin-btn-icon admin-btn-danger">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

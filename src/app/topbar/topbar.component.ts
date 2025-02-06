@@ -11,7 +11,8 @@ import { Router } from '@angular/router';
 export class TopbarComponent {
   usuarioActual: any = {
     nombre: 'Invitado',
-    email: 'usuario@ejemplo.com'
+    email: 'usuario@ejemplo.com',
+    rol:"Invitado"
   };
 
   constructor(private verificar: VerificacionLoginService, private router:Router) {
@@ -22,7 +23,8 @@ export class TopbarComponent {
     const datos = this.verificar.getUsuarioActual();
     this.usuarioActual = {
       nombre: datos.nombre || 'Invitado',
-      email: datos.email || 'usuario@ejemplo.com'
+      email: datos.email || 'usuario@ejemplo.com',
+      rol: datos.rol==1 ? "Admin" : "Usuario",
     };
   }
   logOut(){

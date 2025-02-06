@@ -18,14 +18,15 @@ export class LoginComponent {
   constructor(private fb:FormBuilder, private verificar:VerificacionLoginService, private router:Router){
     this.formulario=this.fb.group({
       username:["", Validators.required],
-      password:["",Validators.required]
+      password:["",Validators.required],
     })
   }
 
   onSubmit(){
     this.verificado=this.verificar.verficarData(this.formulario.value.username,this.formulario.value.password)
+    let rol=this.verificar.getUsuarioActual().rol
     if(this.verificado===true){
-      this.verificar.guardarData(this.formulario.value.username,this.formulario.value.password)
+      this.verificar.guardarData(this.formulario.value.username,this.formulario.value.password,rol)
       this.router.navigate(['dashboard'])
     }
     else{

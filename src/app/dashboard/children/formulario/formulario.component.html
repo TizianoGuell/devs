@@ -1,0 +1,26 @@
+<!-- formulario.component.html -->
+<form class="dashboard-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <h2 class="form-title">Configuración del Perfil</h2>
+    
+    <div class="form-group">
+      <label for="nombre">Nombre completo</label>
+      <input type="text" id="nombre" formControlName="nombre" class="form-input">
+    </div>
+  
+    <div class="form-group">
+      <label for="email">Correo electrónico</label>
+      <input type="email" id="email" formControlName="email" class="form-input">
+    </div>
+  
+    <div class="form-group">
+      <label for="rol">Rol de usuario</label>
+      <select id="rol" formControlName="rol" class="form-select">
+        <option value="1">Administrador</option>
+        <option value="2">Editor</option>
+        <option value="3">Invitado</option>
+      </select>
+    </div>
+    <div class="form-actions">
+      <button type="submit" class="btn btn-save">Guardar Cambios</button>
+    </div>
+  </form>

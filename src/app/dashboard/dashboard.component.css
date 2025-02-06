@@ -1,3 +1,4 @@
+
 .dashboard-container {
     min-height: 100vh;
     display: flex;
@@ -67,7 +68,7 @@
 .main-content {
     flex-grow: 1;
     padding: 30px;
-    background: #f8f9fa;
+    background: rgba(228, 228, 228, 0.738);
 }
 
 .stats-section {
@@ -146,18 +147,3 @@
     color: #3498db;
 }
 
-/* Modo oscuro */
-.modo-oscuro {
-    background: #1a1a1a;
-    color: white;
-}
-
-.modo-oscuro .main-content {
-    background: #2d2d2d;
-}
-
-.modo-oscuro .stat-card,
-.modo-oscuro .data-table,
-.modo-oscuro .activity-item {
-    background: #333;
-}

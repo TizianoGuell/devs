@@ -12,25 +12,34 @@
             
             <nav>
                 <a class="nav-item" 
-                   [class.active]="seccionActiva() === 'estadisticas'"
-                   (click)="cambiarSeccion('estadisticas')">
+                    routerLink="/dashboard/estadisticas" 
+                    routerLinkActive="active">
                     <i class="fas fa-chart-bar"></i> Estadísticas
                 </a>
-                
+
                 <a class="nav-item" 
-                   [class.active]="seccionActiva() === 'actividad'"
-                   (click)="cambiarSeccion('actividad')">
-                    <i class="fas fa-bell"></i> Actividad
-                </a>
-                
-                <a class="nav-item" 
-                   [class.active]="seccionActiva() === 'config'"
-                   (click)="cambiarSeccion('config')">
+                    routerLink="/dashboard/config" 
+                    routerLinkActive="active">
                     <i class="fas fa-cog"></i> Configuración
                 </a>
+
+                <a class="nav-item" 
+                    routerLink="/dashboard/panel-admin" 
+                    routerLinkActive="active">
+                    <i class="fas fa-cog"></i> Panel Admin
+                </a>
+
+                <a class="nav-item" 
+                    routerLink="/dashboard/form" 
+                    routerLinkActive="active">
+                    <i class="fas fa-cog"></i> Formulario
+                </a>
+                    
             </nav>
         </div>
-
+        <div class="main-content">
+            <router-outlet></router-outlet>
+        </div>
         
     </div>
 </div>
