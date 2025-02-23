@@ -1,0 +1,7 @@
+<button (click)="completedOnly()">Solo completados</button>
+<button (click)="loadTodos()">Todos</button>
+<h2>Lista de Todos</h2>
+    <div *ngFor="let todo of todos" class="todo-item">
+      <input type="checkbox" [checked]="todo.completed">
+      <span>{{ todo.title }}</span>
+    </div>

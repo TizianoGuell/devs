@@ -10,6 +10,8 @@ import { PanelAdminComponent } from './dashboard/children/panel-admin/panel-admi
 import { FormularioComponent } from './dashboard/children/formulario/formulario.component';
 import { authDashboardGuard } from './guards/auth-dashboard.guard';
 import { authFormGuard } from './guards/auth-form.guard';
+import { GetExampleComponent } from './dashboard/children/get-example/get-example.component';
+import { CronometroComponent } from './dashboard/children/cronometro/cronometro.component';
 
 export const routes: Routes = [
     {
@@ -44,7 +46,14 @@ export const routes: Routes = [
                 component:FormularioComponent,
                 canDeactivate:[authFormGuard]
             },
-
+            {
+                path:"getExample",
+                component:GetExampleComponent
+            },
+            {
+                path:"cronometro",
+                component:CronometroComponent
+            }
         ]
     },
     {
